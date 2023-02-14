@@ -16,7 +16,7 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final product = Provider.of<Product>(context);
+    final product = Provider.of<Product>(context, listen: false);
     return ClipRRect(
       borderRadius: BorderRadius.circular(15), // setiing border gambar
       child: GridTile(
@@ -35,13 +35,15 @@ class ProductItem extends StatelessWidget {
         footer: GridTileBar(
           // setting title dan icon favorite
           backgroundColor: Colors.black54,
-          leading: IconButton(
-            icon: Icon(
-                product.isFavorite ? Icons.favorite : Icons.favorite_border),
-            color: Theme.of(context).accentColor,
-            onPressed: () {
-              product.togglefavorite();
-            },
+          leading: Consumer<Product>(
+            builder: (ctx, product, _) => IconButton(
+              icon: Icon(
+                  product.isFavorite ? Icons.favorite : Icons.favorite_border),
+              color: Theme.of(context).accentColor,
+              onPressed: () {
+                product.togglefavorite();
+              },
+            ),
           ),
           title: Text(
             product.title,
