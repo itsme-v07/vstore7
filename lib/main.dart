@@ -18,6 +18,8 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       // use create instead builder for the last version Provider package
       create: (context) => Products(),
+      // value shortcut for context
+      // value: Products(),
       child: MaterialApp(
         title: 'VStore',
         // set up tema
