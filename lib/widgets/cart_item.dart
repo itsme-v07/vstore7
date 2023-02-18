@@ -18,7 +18,7 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.symmetric(
-        horizontal: 15,
+        horizontal: 20,
         vertical: 4,
       ),
       child: Padding(
@@ -32,7 +32,10 @@ class CartItem extends StatelessWidget {
               ),
             ),
           ),
-          title: Text(title),
+          title: Text(
+            title,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
           subtitle: Text('Total: \$${price * quantity}'),
           trailing: Text('$quantity x'),
         ),
