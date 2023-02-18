@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
             backgroundColor: Color.fromARGB(255, 17, 7, 100),
           ),
           textTheme: TextTheme(
-            subtitle1: TextStyle(color: Colors.white),
-          ),
+              // subtitle1: TextStyle(color: Colors.white),
+              ),
           fontFamily: 'Lato',
           primaryColor: Color.fromARGB(255, 17, 7, 100),
           accentColor: Colors.deepOrange,
